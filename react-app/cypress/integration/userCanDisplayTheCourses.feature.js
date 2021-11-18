@@ -17,4 +17,9 @@ describe("User is shown courses when coming to the site", () => {
   it('is expected that there will be seven courses displayed', () => {
     cy.get("[data-cy=courses]").children().should("have.length", 7)
   });
+
+  it('is expected that clicking on a category in the header will filter to courses of vue', () => {
+    cy.get("[data-cy=category-3]").click()
+    cy.get("[data-cy=courses]").children().should("have.length", 2)
+  });
 });

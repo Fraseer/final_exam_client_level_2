@@ -1,16 +1,25 @@
 import React from "react";
 import { courses } from "../data/courses";
-import _ from "lodash"
+import _ from "lodash";
 
-const Header = () => {
+const Header = ({ setDisplayedCategory }) => {
   let categories = courses.map((course) => {
-    return <li data-cy={`category-${course.id}`} >{_.capitalize(course.category)}</li>
-  })
+    return (
+      <li
+        data-cy={`category-${course.id}`}
+        onClick={setDisplayedCategory(course.category)}
+      >
+        {_.capitalize(course.category)}
+      </li>
+    );
+  });
 
   return (
     <>
-      <h1 data-cy="site-title" className="center">COURSE LIST</h1>
-      <ul data-cy="categories" className="center">
+      <h1 data-cy="site-title" className="header">
+        COURSE LIST
+      </h1>
+      <ul data-cy="categories" className="header">
         {categories}
       </ul>
     </>

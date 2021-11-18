@@ -44,11 +44,8 @@ ul li {
   text-transform: capitalize;
 }
 
-.center {
+.header {
   text-align: center;
   margin: auto;
-}
-
-.bold {
   font-weight: bold;
 }
