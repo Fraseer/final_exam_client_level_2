@@ -38,8 +38,11 @@ const displayCourses = () => {
 const displayUniqueCategories = () => {
   let uniqueCategories = pluck(courses, 'category')
     .filter((value, index, array) => array.indexOf(value) === index);
+
   const categoryList = document.createElement('ul')
+
   categoryList.classList.add('center')
+
   uniqueCategories.forEach(category => {
     const categoryListItem = document.createElement('li')
     categoryListItem.dataset.filter = category
@@ -47,6 +50,7 @@ const displayUniqueCategories = () => {
     categoryListItem.innerText = category
     categoryList.appendChild(categoryListItem)
   })
+  
   app.insertAdjacentElement("beforeend", categoryList)
 }
 
